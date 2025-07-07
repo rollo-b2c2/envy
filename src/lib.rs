@@ -76,8 +76,8 @@ pub use crate::error::Error;
 pub type Result<T> = std::result::Result<T, Error>;
 
 #[derive(Default)]
-struct VarsOptions {
-    keep_names: bool,
+pub struct VarsOptions {
+    pub keep_names: bool,
 }
 
 struct Vars<Iter>
@@ -266,7 +266,7 @@ pub struct Deserializer<'de, Iter: Iterator<Item = (String, String)>> {
 }
 
 impl<'de, Iter: Iterator<Item = (String, String)>> Deserializer<'de, Iter> {
-    fn new(
+    pub fn new(
         vars: Iter,
         options: Option<VarsOptions>,
     ) -> Self {
