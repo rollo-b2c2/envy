@@ -261,7 +261,7 @@ impl<'de> de::Deserializer<'de> for VarName {
 }
 
 /// A deserializer for env vars
-struct Deserializer<'de, Iter: Iterator<Item = (String, String)>> {
+pub struct Deserializer<'de, Iter: Iterator<Item = (String, String)>> {
     inner: MapDeserializer<'de, Vars<Iter>, Error>,
 }
 
